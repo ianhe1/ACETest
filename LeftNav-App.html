@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>LeftNav-App</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LeftNav-App</td></tr>
+</thead><tbody>
+<!--Last Execution:               June 14, 2017-->
+<!--Last Execution Result:    Pass-->
+<!--Last Update:                    June 14, 2017-->
+<!------------------------------------------------------------->
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Log in-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Click on Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify Login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<!--open Left navigation menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--apps</td>
+	<td></td>
+</tr>
+<!--Go to the given region to test-->
+<tr>
+	<td>echo</td>
+	<td>Region = ${regionName}</td>
+	<td>${regionName}</td>
+</tr>
+<!--Verify each menu item text under Apps (Dallas)-->
+<tr>
+	<td>verifyText</td>
+	<td>css=span.bx--left-nav__header--title</td>
+	<td>Apps</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>DallasAppMenu</td>
+	<td></td>
+</tr>
+<!--Dashboard menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=apps-menu</td>
+	<td>Dashboard</td>
+</tr>
+<!--Cloud foundry Apps menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=cf-apps-menu</td>
+	<td>Cloud Foundry Apps</td>
+</tr>
+<!--Web and Mobile menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=mobile-menu</td>
+	<td>Web and Mobile</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>NEXT</td>
+</tr>
+<!--Containers menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=containers-menu</td>
+	<td>Containers</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>NEXT</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>NEXT</td>
+</tr>
+<!--OpenWhisk menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=whisk-menu</td>
+	<td>OpenWhisk</td>
+</tr>
+<!--Finance menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=finance-menu</td>
+	<td>Finance</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>NEXT</td>
+	<td></td>
+</tr>
+<!--Close the Navigation menu-->
+<tr>
+	<td>click</td>
+	<td>id=apps-menu</td>
+	<td></td>
+</tr>
+<!--Select Cloud Foundry Apps menu-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cf-apps-menu</td>
+	<td></td>
+</tr>
+<!--Verify Cloud Foundry Apps page is open-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Cloud Foundry Apps</td>
+</tr>
+<!--Back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger--btn &gt; span</td>
+	<td></td>
+</tr>
+<!--Flow Control - Sydney-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>CONTAINER_EXIT</td>
+</tr>
+<!--Flow Control - Germany-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>GERMANY_CONTAINER</td>
+</tr>
+<!--Flow Control - London-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>LONDON_CONTAINER</td>
+</tr>
+<!--Flow Control - Dallas-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['US South']</td>
+	<td>DALLAS_CONTAINER</td>
+</tr>
+<!--Select Containers menu (Dallas)-->
+<tr>
+	<td>label</td>
+	<td>DALLAS_CONTAINER</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=containers-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.body-container.armada-empty-page &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.armada-empty-page-message</td>
+	<td>Looks like you don't have any clusters yet</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.body-container.armada-empty-page &gt; button.bx--btn</td>
+	<td>Create Cluster</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Containers</td>
+</tr>
+<!--Verify Containers/Clusters(Dallas) page is open-->
+<tr>
+	<td>click</td>
+	<td>id=nav-containers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.body-container.armada-empty-page &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.body-container.armada-empty-page &gt; button.bx--btn</td>
+	<td>Create Container</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.armada-empty-page-message</td>
+	<td>Looks like you don't have any containers yet</td>
+</tr>
+<!--Exit Dallas Container-->
+<tr>
+	<td>gotolabel</td>
+	<td>CONTAINER_EXIT</td>
+	<td></td>
+</tr>
+<!--Select Containers menu (London)-->
+<tr>
+	<td>label</td>
+	<td>LONDON_CONTAINER</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=containers-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<!--Verify Containers page is open (no Cluster in London)-->
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Containers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create containers</td>
+</tr>
+<!--Exit London Container-->
+<tr>
+	<td>gotolabel</td>
+	<td>CONTAINER_EXIT</td>
+	<td></td>
+</tr>
+<!--Select Containers menu (Germany)-->
+<tr>
+	<td>label</td>
+	<td>GERMANY_CONTAINER</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=containers-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.body-container.armada-empty-page &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<!--Verify Cluster page is open (no Container in Germany)-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.body-container.armada-empty-page &gt; button.bx--btn</td>
+	<td>Create Cluster</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nav-clusters</td>
+	<td></td>
+</tr>
+<!--Exit Germany Container-->
+<tr>
+	<td>gotolabel</td>
+	<td>CONTAINER_EXIT</td>
+	<td></td>
+</tr>
+<!--Back to dashboard-->
+<tr>
+	<td>label</td>
+	<td>CONTAINER_EXIT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<!--Select Web and Mobile menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--apps</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=mobile-menu</td>
+	<td></td>
+</tr>
+<!--Verify Web and Mobile page is open-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>GERMANY</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.hero-info__title.ng-binding</td>
+	<td>Fast-track your web and mobile app</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_GERMANY</td>
+	<td></td>
+</tr>
+<!--Web and Mobile for Germany Only-->
+<tr>
+	<td>label</td>
+	<td>GERMANY</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Web and Mobile</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Mobile service</td>
+</tr>
+<!--EXIT_GERMANY-->
+<tr>
+	<td>label</td>
+	<td>EXIT_GERMANY</td>
+	<td></td>
+</tr>
+<!--Back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>DONE</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>DONE</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>DONE</td>
+</tr>
+<!--Select OpenWhisk menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger--btn &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=whisk-menu</td>
+	<td></td>
+</tr>
+<!--Verify OpenWhisk page is open-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.ow--getstart-heading__label</td>
+	<td>Getting Started with IBM OpenWhisk</td>
+</tr>
+<!--Back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<!--Select Finance menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--apps</td>
+	<td></td>
+</tr>
+<!--Verify Finance page is open-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=finance-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=strong</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=strong</td>
+	<td>IBM Cloud</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.home-header__title</td>
+	<td>IBM Cloud<br />for Financial ServicesBeta</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=IBM Bluemix</td>
+	<td></td>
+</tr>
+<!--Logout-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify logout is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>LeftNav-Service</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LeftNav-Service</td></tr>
+</thead><tbody>
+<!--Last Execution:               June 14, 2017-->
+<!--Last Execution Result:    Pass-->
+<!--Last Update:                    June 14, 2017-->
+<!------------------------------------------------------------->
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Login-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify Login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<!--Open Left navigavion menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--apps</td>
+	<td></td>
+</tr>
+<!--Select Services-->
+<tr>
+	<td>click</td>
+	<td>css=span.bx--left-nav__section--link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Verify menu items under Services category-->
+<tr>
+	<td>verifyText</td>
+	<td>css=span.bx--left-nav__header--title</td>
+	<td>Services</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=services-menu</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=data-menu</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=watson-menu</td>
+	<td>Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=iot-menu</td>
+	<td>Internet of Things</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=apis-menu</td>
+	<td>APIs</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=network-menu</td>
+	<td>Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=storage-menu</td>
+	<td>Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=security-menu</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=devops-menu</td>
+	<td>DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=app-services-menu</td>
+	<td>Application Services</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=integration-menu</td>
+	<td>Integrate</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=schematics-menu</td>
+	<td>Schematics</td>
+</tr>
+<!--Close the Left Navigation menu-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=services-menu</td>
+	<td></td>
+</tr>
+<!--Select Data & Anlytics menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger--btn &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=data-menu</td>
+	<td></td>
+</tr>
+<!--Verify Data & Analytics page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Data &amp; Analytics service</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<!--Select Watson-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=watson-menu</td>
+	<td></td>
+</tr>
+<!--Verify Watson page is open-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Watson service</td>
+</tr>
+<!--Select Internet of Things menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=iot-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>IOT_SYD</td>
+</tr>
+<!--Verify IoT page is open-->
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.dashboard-header &gt; h1</td>
+	<td>50000</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.dashboard-header &gt; h1</td>
+	<td>Internet of Things</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_SYD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>IOT_SYD</td>
+	<td></td>
+</tr>
+<!--IoT Page for Sydney -->
+<tr>
+	<td>pause</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.region-title &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.region-title &gt; h1</td>
+	<td>IBM Watson IoT services are not yet available in the Sydney region.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.region-btn &gt; button.bx--btn--secondary</td>
+	<td>Select New Region</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_SYD</td>
+	<td></td>
+</tr>
+<!--Select APIs menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger--btn &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=apis-menu</td>
+	<td></td>
+</tr>
+<!--Verify API page is open-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=mobile-menu</td>
+	<td>Web and Mobile</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.ng-scope</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.ng-scope</td>
+	<td>Work with APIs</td>
+</tr>
+<!--Flow Control Sydney Skip Network and Storage-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>SECURITY</td>
+</tr>
+<!--Flow Control Germany Skip Network and Storage-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>SECURITY</td>
+</tr>
+<!--Select Network menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=network-menu</td>
+	<td></td>
+</tr>
+<!--Verify Network page is open-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Network service</td>
+</tr>
+<!--Select Storage menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=storage-menu</td>
+	<td></td>
+</tr>
+<!--Verify Storage page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Storage service</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SECURITY</td>
+	<td></td>
+</tr>
+<!--Select Security menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger--btn &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=security-menu</td>
+	<td></td>
+</tr>
+<!--Verify Security page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Security service</td>
+</tr>
+<!--Select DevOps menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=devops-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<!--Flow Control - Sydney-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>NON_DALLAS</td>
+</tr>
+<!--Flow Control - Germany-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>NON_DALLAS</td>
+</tr>
+<!--Flow Control - London-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>NON_DALLAS</td>
+</tr>
+<!--Verify DevOps page is open (Dallas)-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.hero-heading &gt; h1</td>
+	<td>Welcome to DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.hero-heading &gt; h2</td>
+	<td>Continuous Delivery</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=a.bx--btn &gt; span</td>
+	<td>Get Started</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//main[@id='page-content']/div/div/div/div/div[2]/div[2]/div/a/span</td>
+	<td>Learn More</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=toolchains-tab</td>
+	<td>Toolchains</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=pipelines</td>
+	<td>Pipelines</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=services-tab</td>
+	<td>Services</td>
+</tr>
+<!--Exit Dallas DevOps View-->
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_DevOps</td>
+	<td></td>
+</tr>
+<!--Verify DevOps page is open (All Regions except Dallas)-->
+<tr>
+	<td>label</td>
+	<td>NON_DALLAS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create DevOps service</td>
+</tr>
+<!--Exit DevOps view-->
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_DevOps</td>
+	<td></td>
+</tr>
+<!--Label EXIT DevOps-->
+<tr>
+	<td>label</td>
+	<td>EXIT_DevOps</td>
+	<td></td>
+</tr>
+<!--Select Application Services menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=app-services-menu</td>
+	<td></td>
+</tr>
+<!--Verify Application Services page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Application Services</td>
+</tr>
+<!--Select Integration menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=integration-menu</td>
+	<td></td>
+</tr>
+<!--Verify Integration page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Integrate</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>DONE</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>DONE</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>DONE</td>
+</tr>
+<!--Select Schematics menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger.bx--left-nav__trigger--services</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=schematics-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.bp--getting-started-heading1</td>
+	<td></td>
+</tr>
+<!--Verify Schematics page is open-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bp--getting-started-heading1</td>
+	<td>IBM Cloud Schematics (Beta)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=configuration_link</td>
+	<td>Create a configuration</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=environment_link</td>
+	<td>Create an environment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=overview_link</td>
+	<td>Learn more</td>
+</tr>
+<!--Label DONE-->
+<tr>
+	<td>label</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Logout-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<!--Verify Logout is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+</tbody></table>
+</body>
+</html>
