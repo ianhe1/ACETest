@@ -16,6 +16,17 @@
 <!--Purpose:                  Test the Landing page of Bluemix Console UI-->
 <!--Last Update:            June 18, 2017-->
 <!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
 <!--Open Bluemix URL-->
 <tr>
 	<td>open</td>
@@ -176,6 +187,16 @@
 </tr>
 <!--Click Pricing link-->
 <tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Pricing</td>
+	<td></td>
+</tr>
+<tr>
 	<td>clickAndWait</td>
 	<td>link=Pricing</td>
 	<td>50000</td>
@@ -293,6 +314,11 @@
 </tr>
 <!--Verify Support page-->
 <tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForElementPresent</td>
 	<td>link=IBM Bluemix Support</td>
 	<td></td>
@@ -335,6 +361,28 @@
 <tr>
 	<td>selectWindow</td>
 	<td></td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
 	<td></td>
 </tr>
 </tbody></table>

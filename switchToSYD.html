@@ -22,6 +22,12 @@
 	<td>Region Name = ${regionName}</td>
 	<td>${regionName}</td>
 </tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
 <!--Open Bluemix URL-->
 <tr>
 	<td>open</td>
@@ -64,7 +70,7 @@
 <tr>
 	<td>type</td>
 	<td>id=password</td>
-	<td>${passw0rd}</td>
+	<td>${password}</td>
 </tr>
 <!--Click Login button-->
 <tr>
@@ -83,6 +89,12 @@
 	<td>css=div.intro-section-heading &gt; h1</td>
 	<td></td>
 </tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
 <!--Switch to Germany region-->
 <tr>
 	<td>click</td>
@@ -98,6 +110,12 @@
 	<td>pause</td>
 	<td>10000</td>
 	<td></td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
 </tr>
 <!--Log out-->
 <tr>
@@ -136,6 +154,12 @@
 	<td>verifyText</td>
 	<td>link=Log in</td>
 	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

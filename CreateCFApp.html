@@ -16,6 +16,23 @@
 <!--Purpose:                  Test Bluemix UI for Create and Delete App-->
 <!--Last Update:            June 18, 2017-->
 <!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
 <!--Open Bluemix URL-->
 <tr>
 	<td>open</td>
@@ -80,6 +97,12 @@
 <tr>
 	<td>pause</td>
 	<td>10000</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
 	<td></td>
 </tr>
 <!--Create App-->
@@ -283,7 +306,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>50000</td>
+	<td>80000</td>
 	<td></td>
 </tr>
 <!--Verify App is started-->
@@ -323,6 +346,12 @@
 	<td>verifyText</td>
 	<td>id=intro-create-button</td>
 	<td>Create app</td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
 </tr>
 <!--Log out-->
 <tr>
@@ -365,6 +394,39 @@
 	<td>verifyText</td>
 	<td>link=Log in</td>
 	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>

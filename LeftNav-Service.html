@@ -14,8 +14,25 @@
 <!------------------------------------------------------------------------->
 <!--Test Case Name:    LeftNav-Service-->
 <!--Purpose:                  Test the Service Left Navigation Menu of Bluemix UI-->
-<!--Last Update:            June 18, 2017-->
+<!--Last Update:            July 05, 2017-->
 <!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
 <!--Open Bluemix URL-->
 <tr>
 	<td>open</td>
@@ -70,6 +87,12 @@
 <tr>
 	<td>waitForElementPresent</td>
 	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
 	<td></td>
 </tr>
 <!--Open Left navigavion menu-->
@@ -235,6 +258,7 @@
 	<td>id=intro-create-button</td>
 	<td>Create Watson service</td>
 </tr>
+<!--**********************  Insert IoT Menu Here after the defect is fixed **************************-->
 <!--Select Internet of Things menu-->
 <tr>
 	<td>click</td>
@@ -267,7 +291,7 @@
 	<td>css=div.dashboard-header &gt; h1</td>
 	<td>Internet of Things</td>
 </tr>
-<!--Exit Sydney-->
+<!--Flow Control -  Sydney-->
 <tr>
 	<td>gotolabel</td>
 	<td>EXIT_SYD</td>
@@ -305,6 +329,7 @@
 	<td>EXIT_SYD</td>
 	<td></td>
 </tr>
+<!--**********************  Insert IoT Menu Here after the defect is fixed **************************-->
 <!--Select APIs menu-->
 <tr>
 	<td>click</td>
@@ -620,26 +645,17 @@
 	<td>css=div.bp--getting-started-heading1</td>
 	<td>IBM Cloud Schematics (Beta)</td>
 </tr>
-<tr>
-	<td>verifyText</td>
-	<td>id=configuration_link</td>
-	<td>Create a configuration</td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>id=environment_link</td>
-	<td>Create an environment</td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>id=overview_link</td>
-	<td>Learn more</td>
-</tr>
 <!--Label DONE-->
 <tr>
 	<td>label</td>
 	<td>DONE</td>
 	<td></td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
 </tr>
 <!--Logout-->
 <tr>
@@ -687,6 +703,39 @@
 	<td>verifyText</td>
 	<td>link=Log in</td>
 	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
 </tr>
 </tbody></table>
 </body>
