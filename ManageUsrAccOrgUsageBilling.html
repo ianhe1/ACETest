@@ -14,7 +14,7 @@
 <!------------------------------------------------------------------------->
 <!--Test Case Name:    ManageUsrAccOrgUsageBilling-->
 <!--Purpose:                  Test the Manage menu of Bluemix UI-->
-<!--Last Update:            June 18, 2017-->
+<!--Last Update:            Sept 14, 2017-->
 <!-------------------------------------------------------------------------->
 <!--Test Case Start Time-->
 <tr>
@@ -160,7 +160,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>css=span.org-name-text</td>
-	<td>bluemix_ui_AutoTest8</td>
+	<td>${orgName}</td>
 </tr>
 <tr>
 	<td>verifyText</td>
@@ -179,33 +179,43 @@
 	<td></td>
 </tr>
 <tr>
-	<td>pause</td>
-	<td>12000</td>
+	<td>click</td>
+	<td>id=platform-notifications</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=div.js-tab-widget.notifications__main &gt; h1.base--h1</td>
-	<td>Notifications</td>
+	<td>id=platform-notifications</td>
+	<td>Platform Notifications</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>id=tab-link-summary</td>
-	<td>Summary</td>
+	<td>css=div.platform_notifications.notifications &gt; h1.base--h1</td>
+	<td>Platform Notifications</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=h2.row__title</td>
-	<td>Platform</td>
+	<td>css=p.usage__section-info</td>
+	<td>Enable the toggles below to get an email for specific Bluemix events.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='tab-usage']/div/div/div/div/div[3]/div/div/p</td>
+	<td>Incidents</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='tab-usage']/div/div/div/div/div[4]/div/div/p</td>
+	<td>Planned maintenance</td>
 </tr>
 <!--Manage Billing and Usage > Billing-->
 <tr>
 	<td>pause</td>
-	<td>1000</td>
+	<td>15000</td>
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>id=unified-billing-menu</td>
 	<td></td>
 </tr>
@@ -272,12 +282,17 @@
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=div.organizationSelect.text-normal &gt; span</td>
-	<td>View By</td>
+	<td>css=h1.org-region-dropdown__title</td>
+	<td>See How Busy Your Apps Are!</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>//div[@id='dijit_layout_ContentPane_0']/div[3]/div/span</td>
+	<td>css=h2.bx--label</td>
+	<td>View by</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='account-usage-dashboard']/div/div/div/div/div[2]/h2</td>
 	<td>Region</td>
 </tr>
 <!--Manage Security > Identity and Access-->
@@ -337,15 +352,10 @@
 	<td>id=page-title</td>
 	<td>Bluemix API keys</td>
 </tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=button.bx--btn--sm.bx--btn</td>
-	<td>Create API keyadd--glyph</td>
-</tr>
 <!--Click on Bluemix Home logo to go back to dashboard-->
 <tr>
 	<td>clickAndWait</td>
-	<td>css=span.logo__text--bold.bluemix-product-title</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
 	<td></td>
 </tr>
 <!--User Profile-->
